@@ -24,7 +24,7 @@ const user = await User.findById(decoded.userId);
 console.log('user: ',user);
     if (!user) {
       console.log('User not found for Id:', decoded.userId);
-      return res.status(404).json({ error: 'User not found' });
+      return res.status(401).json({ error: 'User not found' });
 
     }
     req.token = token;
